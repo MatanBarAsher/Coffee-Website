@@ -114,6 +114,18 @@ p{
   font-weight: 400;
 }
 
+span{
+  font-family: 'Poppins';
+  color: #847571;
+  font-weight: 400;
+}
+
+::placeholder{
+  font-size: 16px;
+  color: #847571;
+  padding: 2rem;
+}
+
 
 /* !---home section---! */
 
@@ -477,29 +489,91 @@ p{
   background-color: #2B1712 ;
   background-image: url('assets/bg-coffee-beans 1.png');
   border-radius: 100px 100px 0 0;
-  padding: 4rem 10rem 10rem;
+  padding: 4rem 10rem;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .footer-data{
+  display: flex;
   flex: 50%;
+  flex-wrap: wrap;
 }
 
 .footer-form{
+  display: flex;
   flex: 50%;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+#footer-form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-form > form > *{
+  font-family: "Poppins";
+  min-height: 64px;
+  min-width: 360px;
+  max-width: 50%;
+  border-radius: 64px;
+  font-weight: 500;
+  flex: 100%;
+  margin: 1rem;
 }
 
 .footer-caffeto{
-  height: 10%;
+  display: flex;
+  flex: 100%;
+  align-items: center;
 }
 
-.footer-caffeto *{
+#footer-caffeto{
+  padding: 0.5rem;
 }
 
 .footer-social{
-  
+  display: flex;
+  flex: 100%;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.footer-social-icon{
+  margin: 1.5rem;
 }
 
 .footer-copyright{
+ flex: 100%;
+ text-align: center;
+ color: #847571 ;
+}
 
+#footer-title{
+  flex: 100%;
+}
+
+#footer-form-mail{
+  background: none;
+  color: #847571;
+  border: 2px solid #847571;
+}
+
+#footer-form-subscribe{
+  background-color: #DDB66F;
+  font-size: 16px;
+}
+
+#footer-policy{
+  flex: 100%;
+  font-size: 14px;
+}
+
+#footer-policy a{
+  font-family: "Poppins";
+  color: #DDB66F;
+  text-decoration: none;
 }
