@@ -2,20 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <link rel="icon" type="image/svg+xml" href="assets\logo.png" />
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Indie+Flower&family=Kameron:wght@400;700&family=Pacifico&family=Playpen+Sans&family=Poppins:wght@400;500&family=Rubik:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Vite App</title>
+    <title>Caffeto</title>
   </head>
   <body>
     <!-- home -->
-    <div id="background"><p></p></div>
-    <div class="home">
-      <div class="header">
+         <div class="header">
         <div class="header-left">
           <div id="logo"><img src="assets\logo.png"></div>
           <div id="coffee-header"><a>Coffetto</a></div>
@@ -29,16 +27,18 @@
           </ul>
         </div>
       </div>
+    <div class="home">
+
       <div class="home-group">
 
-        <div class="home-coffee"></div>
+        <div class="home-coffee"><img src="assets\home-coffee.png" alt=""></div>
 
         <div class="home-data">
           <h4 id="home-data-title">EXCEPTIOMAL QUALITY</h4>
           <h1 id="home-data-h1">It's time for a good coffee</h1>
           <p id="home-data-p">Each select coffee bean reflects our commitment to Peruvian coffee growers,
              who bring the best select coffee to your table.</p>
-          <button class="btn-get-started">Get Started<img src="assets\ri_arrow-right-s-line.svg">       
+          <button class="btn-get-started btn-main">Get Started<img src="assets\ri_arrow-right-s-line.svg">       
           </button>
         </div>
 
@@ -49,11 +49,7 @@
     <div class="products">
       <div class="products-description">
 
-        <button class="btn-Scroll-Down">Scroll Down<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g id="ri:arrow-down-s-line">
-          <path id="Vector" d="M12 13.172L16.95 8.22198L18.364 9.63598L12 16L5.636 9.63598L7.05 8.22198L12 13.172Z" fill="white"/>
-          </g>
-          </svg>
+        <button class="btn-Scroll-Down btn-secondary">Scroll Down<img src="assets\ri_arrow-down-s-line.svg"> 
         </button>
 
         <p class="description">
@@ -146,7 +142,7 @@
         <form id="footer-form">
           <input type="text" id="footer-form-mail" name="footer-form-mail" placeholder="Enter e-mail addres">
           <!-- <input type="button" id="footer-form-subscribe"> -->
-          <button id="footer-form-subscribe">Subscribe <img src="assets\ri_arrow-right-s-line.svg"></button>
+          <button id="footer-form-subscribe" class="btn-main">Subscribe <img src="assets\ri_arrow-right-s-line.svg"></button>
         </form>
         <p id="footer-policy">We care about your data. Read our <a href="">Privacy Policy</a></p>
       </div>
