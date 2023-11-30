@@ -12,7 +12,7 @@
     <title>Caffeto</title>
   </head>
   <body>
-    
+
     <!-- home -->
          <div class="header">
         <div class="header-left">
@@ -21,14 +21,14 @@
         </div>
         <div class="header-right">
           <ul>
-            <li><a>Home</a></li>
-            <li><a>About</a></li>
-            <li><a>Steps</a></li>
-            <li><a>Testimonial</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#steps">Steps</a></li>
+            <li><a href="#testimonial">Testimonial</a></li>
           </ul>
         </div>
       </div>
-    <div class="home">
+    <div id="home">
 
       <div class="home-group">
 
@@ -47,7 +47,7 @@
     </div>
 
     <!-- products -->
-    <div class="products">
+    <div id="products">
       <div class="products-description">
 
         <button class="btn-Scroll-Down btn-secondary">Scroll Down<img src="assets\ri_arrow-down-s-line.svg"> 
@@ -61,26 +61,48 @@
       <div class="products-group">
         <div class="prod">
           <img src="assets\product-coffee-1.png" href=""></br>
-          <a href="">Classic Coffee</a></br>
+          <a id="classic-coffee" >Classic Coffee</a></br>
           <a>$17.90</a>
         </div>
         <div class="prod">
           <img src="assets\product-coffee-2.png" href=""></br>
-          <a href="">Black Coffee</a></br>
+          <a id="Black-coffee" href="">Black Coffee</a></br>
           <a>$24.90</a>
         </div>
         <div class="prod">
           <a href=""><img src="assets\product-coffee-3.png" alt=""></a></br>
-          <a href="">Strong Coffee</a></br>
+          <a id="strong-coffee" href="">Strong Coffee</a></br>
           <a>$32.90</a>
         </div>
         
       </div>
+      <dialog class="item-modal" id="item-modal1">
+        <img src="assets\product-coffee-1.png"></br>
+        <h1>Classic Coffee</h1>
+        <p>70% Arabica, 30% Robusta.<br>
+            A balanced rich coffee, good for all kinds of drinks.</p>
+        <button class="close-modal" id="close-modal1">Close</button>
+      </dialog>
+      <dialog class="item-modal" id="item-modal2">
+        <img src="assets\product-coffee-2.png"></br>
+        <h1>Black Coffee</h1>
+        <p>80% Arabica, 20% Robusta.<br>
+            A rich coffee, good for all kinds of drinks.</p>
+        <button class="close-modal" id="close-modal2">Close</button>
+      </dialog>
+      <dialog class="item-modal" id="item-modal3">
+        <img src="assets\product-coffee-3.png"></br>
+        <h1>strong Coffee</h1>
+        <p>100% Arabica.<br>
+            A strong rich coffee, good for all kinds of drinks.</p>
+        <button class="close-modal" id="close-modal3">Close</button>
+      </dialog>
+
     </div>
 
     <!-- about -->
 
-    <div class="about">
+    <div id="about">
       <div class="about-img">
         <img id="about-img1" src="assets\about-coffee.png" alt="">
       </div>
@@ -92,7 +114,7 @@
 
     <!-- steps -->
     
-    <div class="steps">
+    <div id="steps">
       <div id="steps-container"></div>
       <h1 id="steps-title">Steps of manufacturing our products</h1>
       <div class="step"><div id="S01" class="step-item">
@@ -121,7 +143,7 @@
 
     <!-- Testimonial -->
 
-    <div class="testimonial">
+    <div id="testimonial">
       <div class="tes-data">
         <h1 id="tes-data-title">Coffee is the best drink in the morning, it keeps you focused.</h1>
         <p id="tes-data-title">Jhon Doe</p>
@@ -132,7 +154,7 @@
     </div>
 
     <!-- footer -->
-    <div class="footer">
+    <div id="footer">
       <div class="footer-data">
         <div class="footer-caffeto">
          <img id="footer-logo" src="assets\logo.png"><a id="footer-caffeto">Caffeto</a>
@@ -160,6 +182,6 @@
 
 
     <!-- <div id="app"></div> -->
-    <!-- <script type="module" src="/main.js"></script> -->
+    <script type="module" src="/main.js"></script>
   </body>
 </html>

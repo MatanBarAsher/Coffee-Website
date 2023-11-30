@@ -14,11 +14,11 @@ h1, h2, h3, h4, h5, h6, a{
   font-family: 'Pacifico', cursive;
   color: #fff;
   font-weight: 400;
+  text-decoration: none;
 }
 
 a:hover{
   color: #DDB66F;
-  font-size: 110%;
 }
 
 p{
@@ -39,7 +39,7 @@ span{
   padding: 2rem;
 }
 
-.btn-main:hover{
+.btn-main:hover, .close-modal:hover{
   background-color: #c2a061;
 }
 
@@ -50,13 +50,6 @@ span{
 
 /* ---header section--- */
 
-
-.home{
-  width: 100%;
-  /* height: 40rem; */
-  background: linear-gradient(180deg, #4B2C24 0%, #2B1712 100%);
-  padding-bottom: 5rem;
-}
 
 .header{
   position: sticky;
@@ -69,6 +62,7 @@ span{
   top: 0;
   z-index: 99;
 }
+
 
 #background{
   position: absolute;
@@ -114,6 +108,14 @@ span{
 /* ---end of header section--- */
 
 /* ---home section--- */
+
+
+#home{
+  width: 100%;
+  /* height: 40rem; */
+  background: linear-gradient(180deg, #4B2C24 0%, #2B1712 100%);
+  padding-bottom: 5rem;
+}
 
 .home-group{
   padding: 60px 5rem ;
@@ -214,7 +216,7 @@ span{
 /* !---products section---! */
 
 
-.products{
+#products{
   margin-top: -100px;
   background-color: #492D26;
   border-radius: 100px 100px 0 0;
@@ -269,6 +271,35 @@ span{
   text-decoration: none;
 }
 
+.item-modal{
+  background-color: #492D26;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+  text-align: center;
+  border:0;
+  border-radius: 50px;
+  min-width: 30%;
+  max-width: 50%;
+  padding: 2rem;
+}
+
+.item-modal::backdrop{
+  background-color: black;
+  opacity: .3;
+}
+
+.close-modal{
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 14px;
+  color: black;
+  min-width: 20%;
+  height: 50px;
+  border: 0;
+  border-radius: 100px;
+  background-color: #DDB66F;
+  box-shadow: 0px 8px 32px 0px rgba(221, 183, 112, 0.25);
+}
+
 @media only screen and (max-width: 1100px) {
 
   .products{
@@ -307,7 +338,7 @@ span{
 
 /* !---about section---! */
 
-.about{
+#about{
   margin-top: -100px;
   background-color: #fff;
   border-radius: 100px 100px 0 0;
@@ -363,7 +394,7 @@ span{
 
 /* ---steps section--- */
 
-.steps{
+#steps{
   margin-top: -100px;
   background-color: #492D26 ;
   background-image: url('assets/bg-coffee-beans 1.png');
@@ -527,7 +558,7 @@ span{
 
 /* !---testimonial section---! */
 
-.testimonial{
+#testimonial{
   margin-top: -100px;
   background-color: #fff;
   border-radius: 100px 100px 0 0;
@@ -574,7 +605,7 @@ span{
 
 /* !---footer section---! */
 
-.footer{
+#footer{
   margin-top: -100px;
   background-color: #2B1712 ;
   background-image: url('assets/bg-coffee-beans 1.png');

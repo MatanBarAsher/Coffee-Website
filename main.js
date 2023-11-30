@@ -22,3 +22,19 @@ import './style.css'
 // `
 
 // setupCounter(document.querySelector('#counter'))
+
+//items modal
+
+const modal1 = document.querySelector("#item-modal1");
+const openModal1 = document.querySelector("#classic-coffee");
+const closeModal1= document.querySelector("#close-modal1");
+
+openModal1.addEventListener("click", () =>{
+    modal1.showModal();
+}
+)
+
+closeModal1.addEventListener("click", () =>{
+    modal1.close();
+}
+)
