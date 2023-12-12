@@ -25,16 +25,84 @@ import './style.css'
 
 //items modal
 
-const modal1 = document.querySelector("#item-modal1");
-const openModal1 = document.querySelector("#classic-coffee");
-const closeModal1= document.querySelector("#close-modal1");
+const openModal = document.querySelectorAll(".prod-a");
+const closeModal= document.querySelectorAll(".close-modal");
 
-openModal1.addEventListener("click", () =>{
-    modal1.showModal();
-}
-)
+const stepFaders = document.querySelectorAll(".fade-in-step");
 
-closeModal1.addEventListener("click", () =>{
-    modal1.close();
+const btnSubscirbeOpn = document.getElementById("footer-form-subscribe");
+const btnSubscirbeCls = document.getElementById("close-modal4");
+const btnSubscribe = document.getElementById("btn-subscribe");
+var subscribers = [];
+
+if(localStorage["subscribers"] != undefined){
+    subscribers = JSON.parse(localStorage["subscribers"]);
 }
-)
+//setting click events for modals
+
+for (let index = 0; index < openModal.length; index++) {
+    const clk = "#modal" + (index + 1);
+
+    openModal[index].addEventListener("click", () =>{
+        document.querySelector(clk).showModal();
+    })
+
+    closeModal[index].addEventListener("click", () =>{
+        document.querySelector(clk).close();
+    })
+}
+
+
+//steps transition animations
+
+const apearOptions = {
+    threshold: 0,
+    rootMargin:"0px 0px -100px 0px"
+};
+
+const apearOnScroll = new IntersectionObserver
+(function(step, apearOnScroll) {
+    step.forEach(stp =>{
+        if(!stp.isIntersecting)
+            return;
+        else{
+            stp.target.classList.add("apear");
+            apearOnScroll.unobserve(stp.target);
+        }
+    })
+
+     
+}, apearOptions);
+
+stepFaders.forEach(fader =>{
+    apearOnScroll.observe(fader);
+});
+
+//click event for subscribe modal
+
+btnSubscirbeOpn.addEventListener("click",()=>{
+    document.getElementById("subscribe-modal").showModal();
+});
+
+btnSubscirbeCls.addEventListener("click", ()=>{
+    document.getElementById("subscribe-modal").close();
+})
+
+btnSubscribe.addEventListener("click", ()=>{
+    const inpFname = document.getElementById("footer-form-Fname").value;
+    const inpLname = document.getElementById("footer-form-Lname").value;
+    const inpMail = document.getElementById("footer-form-mail").value;
+    sub(inpFname, inpLname, inpMail);
+    document.getElementById("footer-form-Fname").value = "";
+    document.getElementById("footer-form-Lname").value = "";
+    document.getElementById("footer-form-mail").value = "";
+    document.getElementById("subscribe-modal").close();
+})
+
+//setting a new subscriber
+
+function sub(fName, lName, eMail){
+    let newSub = {firstName: fName, lastName: lName, eMail: eMail};
+    subscribers.push(newSub);
+    localStorage.setItem("subscribers", JSON.stringify(subscribers));
+};

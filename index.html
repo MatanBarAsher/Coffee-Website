@@ -61,38 +61,38 @@
       <div class="products-group">
         <div class="prod">
           <img src="assets\product-coffee-1.png" href=""></br>
-          <a id="classic-coffee" >Classic Coffee</a></br>
+          <a class="prod-a" id="classic-coffee" >Classic Coffee</a></br>
           <a>$17.90</a>
         </div>
         <div class="prod">
           <img src="assets\product-coffee-2.png" href=""></br>
-          <a id="Black-coffee" href="">Black Coffee</a></br>
+          <a class="prod-a" id="Black-coffee">Black Coffee</a></br>
           <a>$24.90</a>
         </div>
         <div class="prod">
           <a href=""><img src="assets\product-coffee-3.png" alt=""></a></br>
-          <a id="strong-coffee" href="">Strong Coffee</a></br>
+          <a class="prod-a" id="strong-coffee">Strong Coffee</a></br>
           <a>$32.90</a>
         </div>
         
       </div>
-      <dialog class="item-modal" id="item-modal1">
+      <dialog class="item-modal" id="modal1">
         <img src="assets\product-coffee-1.png"></br>
         <h1>Classic Coffee</h1>
         <p>70% Arabica, 30% Robusta.<br>
             A balanced rich coffee, good for all kinds of drinks.</p>
         <button class="close-modal" id="close-modal1">Close</button>
       </dialog>
-      <dialog class="item-modal" id="item-modal2">
+      <dialog class="item-modal" id="modal2">
         <img src="assets\product-coffee-2.png"></br>
         <h1>Black Coffee</h1>
         <p>80% Arabica, 20% Robusta.<br>
             A rich coffee, good for all kinds of drinks.</p>
         <button class="close-modal" id="close-modal2">Close</button>
       </dialog>
-      <dialog class="item-modal" id="item-modal3">
+      <dialog class="item-modal" id="modal3">
         <img src="assets\product-coffee-3.png"></br>
-        <h1>strong Coffee</h1>
+        <h1>Strong Coffee</h1>
         <p>100% Arabica.<br>
             A strong rich coffee, good for all kinds of drinks.</p>
         <button class="close-modal" id="close-modal3">Close</button>
@@ -115,16 +115,16 @@
     <!-- steps -->
     
     <div id="steps">
-      <div id="steps-container"></div>
+
       <h1 id="steps-title">Steps of manufacturing our products</h1>
-      <div class="step"><div id="S01" class="step-item">
+      <div class="step fade-in-step"><div id="S01" class="step-item">
         <div class="step-number-circle"><span>01</span></div>
         <img src="assets\steps-green-coffee.png" alt=""></div>
       
       <div id="D01" class="step-description"><p id="P01">Harvest occurs annually when the coffee beans reach maturity and are collected for processing.</p></div>
       </div>
 
-      <div class="step"><div id="S02" class="step-item">
+      <div class="step fade-in-step"><div id="S02" class="step-item">
         <div class="step-number-circle"><span>02</span></div>
         <img src="assets\steps-coffee-beans.png" alt=""></div>
       
@@ -132,7 +132,7 @@
       <div id="D02" class="step-description"><p id="P02">The beans are dried using a wet or dry technique, depending on the taste we want to obtain.</p></div>
       </div>
 
-      <div class="step"><div id="S03" class="step-item">
+      <div class="step fade-in-step"><div id="S03" class="step-item">
         <div class="step-number-circle"><span>03</span></div>
         <img src="assets\steps-ground-coffee 1.png" alt=""></div>
       
@@ -162,11 +162,10 @@
         <h1 id="footer-title">Sign up for our newsletter</h1>
       </div>
       <div class="footer-form">
-        <form id="footer-form">
-          <input type="text" id="footer-form-mail" name="footer-form-mail" placeholder="Enter e-mail addres">
+        <div class="form" id="footer-form">
           <!-- <input type="button" id="footer-form-subscribe"> -->
           <button id="footer-form-subscribe" class="btn-main">Subscribe <img src="assets\ri_arrow-right-s-line.svg"></button>
-        </form>
+        </div>
         <p id="footer-policy">We care about your data. Read our <a href="">Privacy Policy</a></p>
       </div>
       <div class="footer-social">
@@ -178,6 +177,16 @@
         <img src="assets\ri_copyright-line.svg" alt="">
         <span>Copyright Bedimcode. All rights reserved</span>
       </div>
+
+      <dialog class="item-modal" id="subscribe-modal">
+        <h1>Keep in touch</h1>
+        <input type="text" id="footer-form-Fname" placeholder="First name"><br>
+        <input type="text" id="footer-form-Lname" placeholder="Last name"><br>
+        <input type="text" id="footer-form-mail" placeholder="E-mail addres"><br>
+        <button class="close-modal" id="close-modal4">Close</button>
+        <button class="close-modal" id="btn-subscribe">Subscribe</button>
+      </dialog>
+
     </div>
 
 

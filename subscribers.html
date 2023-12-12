@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Indie+Flower&family=Kameron:wght@400;700&family=Pacifico&family=Playpen+Sans&family=Poppins:wght@400;500&family=Rubik:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <title>Subscribers</title>
+
+    <style>
+        body{
+            margin: auto;
+            margin-top: 50px;
+            max-width: 1400px;
+            font-family: 'Poppins';
+
+        }
+    </style>
+
+    <script>
+      var subscribers = [];
+
+      if(localStorage["subscribers"] != undefined){
+      subscribers = JSON.parse(localStorage["subscribers"]);
+    }
+    </script>
+
+</head>
+<body>
+    <fieldset>
+        <legend>Caffeto Subscribers</legend>
+    </fieldset>
+
+
+</body>
+
+</html>
