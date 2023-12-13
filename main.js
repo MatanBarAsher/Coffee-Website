@@ -92,12 +92,51 @@ btnSubscribe.addEventListener("click", ()=>{
     const inpFname = document.getElementById("footer-form-Fname").value;
     const inpLname = document.getElementById("footer-form-Lname").value;
     const inpMail = document.getElementById("footer-form-mail").value;
-    sub(inpFname, inpLname, inpMail);
-    document.getElementById("footer-form-Fname").value = "";
-    document.getElementById("footer-form-Lname").value = "";
-    document.getElementById("footer-form-mail").value = "";
-    document.getElementById("subscribe-modal").close();
+    if(firstNameCheck(inpFname) && lastNameCheck(inpLname) && ValidateEmail(inpMail)){
+        sub(inpFname, inpLname, inpMail);
+        document.getElementById("footer-form-Fname").value = "";
+        document.getElementById("footer-form-Lname").value = "";
+        document.getElementById("footer-form-mail").value = "";
+        document.getElementById("subscribe-modal").close();
+        window.open("subscribers.html");
+    }
 })
+
+//email checking
+
+function ValidateEmail(inputText)
+{
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(inputText.match(mailformat))
+{
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+return false;
+}
+}
+
+//checking names
+
+function firstNameCheck(inputText){
+    if(inputText !== "")
+    return true;
+else{
+    alert("First name not enterd");
+    return false;
+}
+}
+
+function lastNameCheck(inputText){
+    if(inputText !== "")
+    return true;
+else{
+    alert("Last name not enterd");
+    return false;
+}
+}
 
 //setting a new subscriber
 
