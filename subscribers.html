@@ -15,7 +15,6 @@
             margin: 50px;
             max-width: 1400px;
             font-family: 'Poppins';
-
         }
 
         li{
@@ -23,13 +22,22 @@
             padding: 10px;
             margin: 10px;
         }
+
+        button{
+            position:absolute;
+            left: 50%;
+        }
+
+        #main{
+            padding: 50px;
+        }
     </style>
 
     
 
 </head>
 <body>
-    <fieldset>
+    <fieldset id="main">
         <legend>Caffeto Subscribers</legend>
         <ol id="sub-list">
             
@@ -38,20 +46,5 @@
 
 
 </body>
-<script>
-    var subscribers = [];
-    str = "";
-
-    if(localStorage["subscribers"] != undefined){
-    subscribers = JSON.parse(localStorage["subscribers"]);
-  }
-
-  subscribers.forEach(element => {
-      str += `<li><b>First name:</b> ${element["firstName"]}<br><b>Last Name:</b> ${element["lastName"]}<br><b>E-mail:</b> ${element["eMail"]}</li>`;
-  });
-  document.getElementById("sub-list").innerHTML = str;
-
-  document.getElementById("sub-list").prepend(`Total subscribers: ${subscribers.length}`);
-
-  </script>
+<script src="subscribers.js"></script>
 </html>

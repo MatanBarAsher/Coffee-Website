@@ -34,9 +34,16 @@ const btnSubscirbeOpn = document.getElementById("footer-form-subscribe");
 const btnSubscirbeCls = document.getElementById("close-modal4");
 const btnSubscribe = document.getElementById("btn-subscribe");
 var subscribers = [];
+document.querySelector("body").addEventListener("load", init());
 
+function init(){
 if(localStorage["subscribers"] != undefined){
     subscribers = JSON.parse(localStorage["subscribers"]);
+}
+else
+{
+    subscribers=[];
+}
 }
 //setting click events for modals
 
@@ -88,6 +95,7 @@ btnSubscirbeCls.addEventListener("click", ()=>{
     document.getElementById("subscribe-modal").close();
 })
 
+var openedWindow;
 btnSubscribe.addEventListener("click", ()=>{
     const inpFname = document.getElementById("footer-form-Fname").value;
     const inpLname = document.getElementById("footer-form-Lname").value;
@@ -98,7 +106,14 @@ btnSubscribe.addEventListener("click", ()=>{
         document.getElementById("footer-form-Lname").value = "";
         document.getElementById("footer-form-mail").value = "";
         document.getElementById("subscribe-modal").close();
-        window.open("subscribers.html");
+    }
+    if(openedWindow === undefined){
+        // there is no open 'subscribers' tab
+        openedWindow = window.open("subscribers.html","_blank");
+    }
+    else{
+        openedWindow.location.reload();
+        openedWindow.focus();
     }
 })
 
@@ -141,7 +156,15 @@ else{
 //setting a new subscriber
 
 function sub(fName, lName, eMail){
-    let newSub = {firstName: fName, lastName: lName, eMail: eMail};
+    init();
+    //console.log(subscribers[subscribers.length -1].id);
+    if(subscribers.length !== 0){
+        var newId = (subscribers[subscribers.length -1].id +1);
+    }
+    else{
+        var newId = 1;
+    }
+    let newSub = {id: newId ,firstName: fName, lastName: lName, eMail: eMail};
     subscribers.push(newSub);
     localStorage.setItem("subscribers", JSON.stringify(subscribers));
 };
