@@ -26,7 +26,6 @@ import './style.css'
 //items modal
 
 const openModal = document.querySelectorAll(".prod-a");
-const closeModal= document.querySelectorAll(".close-modal");
 
 const stepFaders = document.querySelectorAll(".fade-in-step");
 
@@ -45,18 +44,53 @@ else
     subscribers=[];
 }
 }
+
 //setting click events for modals
-
 for (let index = 0; index < openModal.length; index++) {
-    const clk = "#modal" + (index + 1);
 
-    openModal[index].addEventListener("click", () =>{
-        document.querySelector(clk).showModal();
+    openModal[index].addEventListener("click", ()=>{
+        itemModalRender(index);
+        document.getElementById("item-modal").showModal();
     })
+}
 
-    closeModal[index].addEventListener("click", () =>{
-        document.querySelector(clk).close();
-    })
+
+function itemModalRender(index){
+    //renders the relevant content by index
+    let image;
+    let h1;
+    let p;
+
+    switch (index) {
+        case 0:
+                image = `<img src="assets/product-coffee-1.png"></br>`;
+                h1 = `<h1>Classic Coffee</h1>`;
+                p = `<p>70% Arabica, 30% Robusta.<br>
+                A balanced rich coffee, good for all kinds of drinks.</p>`;
+            break;
+        case 1:
+                image = `<img src="assets/product-coffee-2.png"></br>`;
+                h1 = `<h1>Black Coffee</h1>`;
+                p = `<p>80% Arabica, 20% Robusta.<br>
+                A rich coffee, good for all kinds of drinks.</p>`;
+            break;
+        case 2:
+                image = `<img src="assets/product-coffee-3.png"></br>`;
+                h1 = `<h1>Strong Coffee</h1>`;
+                p = `<p>100% Arabica.<br>
+                A strong rich coffee, good for all kinds of drinks.</p>`;
+            break;
+    
+        default:
+            break;
+    }
+
+    document.getElementById("item-modal").innerHTML = image + h1 + p + `<button class="close-modal" id="close-item-modal">Close</button>`;
+
+    // adding close event listener after rendering
+    document.getElementById("close-item-modal").addEventListener("click", ()=>{
+        document.getElementById("item-modal").close();
+    });
 }
 
 
@@ -107,7 +141,7 @@ btnSubscribe.addEventListener("click", ()=>{
         document.getElementById("footer-form-mail").value = "";
         document.getElementById("subscribe-modal").close();
     }
-    if(openedWindow === undefined){
+    if(openedWindow === undefined || openedWindow.closed === true){
         // there is no open 'subscribers' tab
         openedWindow = window.open("subscribers.html","_blank");
     }
