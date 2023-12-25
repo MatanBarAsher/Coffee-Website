@@ -43,8 +43,6 @@ else
 {
     subscribers=[];
 }
-}
-
 //setting click events for modals
 for (let index = 0; index < openModal.length; index++) {
 
@@ -53,6 +51,8 @@ for (let index = 0; index < openModal.length; index++) {
         document.getElementById("item-modal").showModal();
     })
 }
+}
+
 
 
 function itemModalRender(index){
